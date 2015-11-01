@@ -33,7 +33,7 @@ if (isDeveloping) {
 }
 
 app.get('*', function response(req, res, next) {
-  if (req.url === "") {
+  if (req.url === "") { // For debug only
     res.sendFile(path.join(__dirname, 'dist/index.html'));
   } else {
     next();

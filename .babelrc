@@ -11,7 +11,11 @@
             "locals": ["module"]
           }]
         }
-      }
+      },
+      "optional": [
+        "es7.decorators",
+        "runtime"
+      ]
     }
   }
 }
