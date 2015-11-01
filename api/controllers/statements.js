@@ -35,8 +35,10 @@ module.exports = {
     },
  
     create: function(req, res) {
+        console.log('_DEBUG req body', req.body);
+        var text = req.body.text;
         var statement = new model({
-            text : statements
+            text: text
         });
  
         statement.save(function(err, statement){

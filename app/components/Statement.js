@@ -68,7 +68,7 @@ class Statement extends React.Component {
               checked={this.props.statement.completed}/>
           */}
           <label onDoubleClick={null/*() => this.edit()*/}>
-            {this.props.statement.title} {this.props.statement.$isSaving ?
+            {this.props.statement.text} {this.props.statement.$isSaving ?
               <small>(saving)</small> :
               null
             }

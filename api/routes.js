@@ -15,12 +15,15 @@ module.exports = function(app) {
        console.log('connected to mongodb at ' + host + ' , DB: ' + dbName);
     });
 
+    var bodyParser = require('body-parser');
+    app.use(bodyParser.json()); // for parsing application/json
+
     var ctrlStatements = require('./controllers/statements.js');
 
     app.route('/api')
        .get(function(req, res, next) {
          console.log('TEST API');
-         res.send('TEST API');
+         res.json({response: 'TEST API'});
     });
 
     app.get('/api/statement/', ctrlStatements.list);

@@ -4,7 +4,7 @@ function addStatement (args, state, output) {
   let statement = {
     $ref: ref,
     $isSaving: true,
-    title: state.get('newStatementText'),
+    text: state.get('newStatementText'),
     completed: false
   };
 
