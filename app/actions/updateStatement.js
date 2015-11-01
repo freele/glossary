@@ -4,6 +4,7 @@ function updateStatement (args, state) {
 
   let statement = state.get(path);
 
+  console.log('Update statement');
   state.merge(path, {
     id: args.id,
     $isSaving: false

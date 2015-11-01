@@ -12,23 +12,30 @@ const model = Model({
 const services = {};
 
 const computed = {
-  // visibleTodos: function (get) {
-  //   const todos = get(['todos']);
-  //   const filter = get(['filter']);
+  visibleStatements: function (get) {
+    const statements = get(['statements']);
+    return Object.keys(statements).map(function (key) {
+      return statements[key];
+    });
 
-  //   return Object.keys(todos).filter(function(key) {
+    // return statements.map(function (key) {
+    //   return statements[key];
+    // }; // for debug and test purposes a bit simplified
+    // const filter = get(['filter']);
 
-  //     let todo = todos[key];
-  //     return (
-  //       filter === 'all' ||
-  //       (filter === 'completed' && todo.completed) ||
-  //       (filter === 'active' && !todo.completed)
-  //     );
+    // return Object.keys(todos).filter(function(key) {
 
-  //   }).map(function (key) {
-  //     return todos[key];
-  //   });
-  // },
+    //   let todo = todos[key];
+    //   return (
+    //     filter === 'all' ||
+    //     (filter === 'completed' && todo.completed) ||
+    //     (filter === 'active' && !todo.completed)
+    //   );
+
+    // }).map(function (key) {
+    //   return todos[key];
+    // });
+  },
   // isAllChecked: function (get, getComputed) {
   //   let todos = getComputed(['visibleTodos']);
 

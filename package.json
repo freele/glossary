@@ -26,11 +26,11 @@
     "jscs": "jscs ."
   },
   "dependencies": {
-    "babel-core": "^6.0.14",
     "baobab": "^2.1.0",
     "cerebral": "^0.21.0",
     "cerebral-baobab": "^0.3.1",
     "cerebral-react": "^0.5.0",
+    "classnames": "^2.2.0",
     "react": "0.14.0-rc1 ",
     "react-dom": "0.14.0-rc1"
   },

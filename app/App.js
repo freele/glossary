@@ -18,9 +18,15 @@
 
 import React from 'react';
 import {Decorator as Cerebral} from 'cerebral-react';
+import AddStatement from './components/AddStatement.js';
+import StatementsList from './components/StatementsList.js';
+// import TodosFooter from './components/TodosFooter.js';
 
 @Cerebral({
-  title: ['title']
+  statements: ['statements'],
+  isSaving: ['isSaving'] // for later usage
+}, {
+  visibleStatements: ['visibleStatements']
 })
 class App extends React.Component {
   render() {
@@ -31,7 +37,7 @@ class App extends React.Component {
           <AddStatement/>
         </header>
 
-        {/*this.props.visibleTodos.length ? <TodosList/> : null*/}
+        {this.props.visibleStatements.length ? <StatementsList/> : null}
         {/*Object.keys(this.props.todos).length ? <TodosFooter/> : null*/}
       </section>
     );
