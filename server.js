@@ -5,6 +5,7 @@ import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import config from './webpack.config.js';
+import apiRoutes from './api/routes.js';
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
@@ -31,9 +32,15 @@ if (isDeveloping) {
   app.use(webpackHotMiddleware(compiler));
 }
 
-app.get('*', function response(req, res) {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
+app.get('*', function response(req, res, next) {
+  if (req.url === "") {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+  } else {
+    next();
+  }
 });
+
+apiRoutes(app);
 
 app.listen(port, 'localhost', function onStart(err) {
   if (err) {
