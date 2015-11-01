@@ -4,7 +4,8 @@ import Model from 'cerebral-baobab';
 const model = Model({
   nextRef: 0,
   url: '/',
-  todos: {},
+  statements: {},
+  newStatementText: '',
   isSaving: false
 });
 
