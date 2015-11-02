@@ -23,18 +23,20 @@ class CentralStatement extends React.Component {
     // }.bind(this));
   }
 
+  onStatementClick() {
+    
+    this.props.signals.centralStatementUpdated();
+  }
 
   render() {
     console.log('CentralStatement render');
     console.log(this.props.statement);
     return (
-      <li className={null/*className*/}>
-        <div className="view">
-          <label onClick={null/*() => this.edit()*/}>
-            {this.props.statement ? this.props.statement.text : ''}
-          </label>
-        </div>
-      </li>
+      <div className="view">
+        <label onClick={(e) => this.onStatementClick(e)}>
+          {this.props.statement ? this.props.statement.text : ''}
+        </label>
+      </div>
     );
 
   }
