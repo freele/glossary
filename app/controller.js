@@ -6,6 +6,8 @@ const model = Model({
   nextRef: 0,
   url: '/',
   statements: {},
+  fetchedStatements: {},
+  centralStatementRef: 0,
   newStatementText: '',
   isSaving: false
 });

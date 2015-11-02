@@ -1,3 +1,5 @@
+import './App.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.js';
@@ -16,6 +18,7 @@ import CerebralRouter from 'cerebral-router';
 // import todoDoubleClicked from './signals/todoDoubleClicked.js';
 import newStatementChanged from './signals/newStatementChanged.js';
 import newStatementSubmitted from './signals/newStatementSubmitted.js';
+import centralStatementUpdated from './signals/centralStatementUpdated.js';
 // import recordClicked from './signals/recordClicked.js';
 // import playClicked from './signals/playClicked.js';
 // import stopClicked from './signals/stopClicked.js';
@@ -31,6 +34,7 @@ import newStatementSubmitted from './signals/newStatementSubmitted.js';
 // controller.signal('todoDoubleClicked', todoDoubleClicked);
 controller.signal('newStatementChanged', newStatementChanged);
 controller.signal('newStatementSubmitted', newStatementSubmitted);
+controller.signal('centralStatementUpdated', centralStatementUpdated);
 // controller.signal('recordClicked', recordClicked);
 // controller.signal('playClicked', playClicked);
 // controller.signal('stopClicked', stopClicked);

@@ -20,7 +20,8 @@ import React from 'react';
 import {Decorator as Cerebral} from 'cerebral-react';
 import AddStatement from './components/AddStatement.js';
 import StatementsList from './components/StatementsList.js';
-// import TodosFooter from './components/TodosFooter.js';
+// import StatementFooter from './components/StatementFooter.js';
+import CentralStatement from './components/CentralStatement.js';
 
 @Cerebral({
   statements: ['statements'],
@@ -31,7 +32,8 @@ import StatementsList from './components/StatementsList.js';
 class App extends React.Component {
   render() {
     return (
-      <section id="statementapp">
+      <section id="statementapp" className="app">
+        <CentralStatement/>
         <header id="header">
           <h1>statements</h1>
           <AddStatement/>
