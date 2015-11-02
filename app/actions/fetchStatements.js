@@ -8,7 +8,6 @@ function fetchStatements (args, state, next) {
   .then(function(response){
     return response.json();  
   }).then(function(response){
-    console.log('FETCHED STATEMENTS', response);
     next.success(shuffle(response));
   }).catch(function(err){
     console.log(err);

@@ -8,8 +8,6 @@ import {Decorator as Cerebral} from 'cerebral-react';
 class CentralStatement extends React.Component {
 
   componentDidMount() {
-    console.log('CentralStatement did mount');
-    console.log(this.props.statement);
     this.props.signals.centralStatementUpdated();
 
     // $.get(this.props.source, function(result) {
@@ -23,18 +21,24 @@ class CentralStatement extends React.Component {
     // }.bind(this));
   }
 
-  onStatementClick() {
-    
+  onStatementClick(word) {
+    console.log('Click info', word);
     this.props.signals.centralStatementUpdated();
   }
 
+  renderWord(word, index) {
+    return (
+      <span key={index} onClick={() => this.onStatementClick(word)}>
+        {word + ' '}
+      </span>
+    );
+  }
+
   render() {
-    console.log('CentralStatement render');
-    console.log(this.props.statement);
     return (
       <div className="view">
-        <label onClick={(e) => this.onStatementClick(e)}>
-          {this.props.statement ? this.props.statement.text : ''}
+        <label>
+          {this.props.statement ? this.props.statement.text.split(' ').map(this.renderWord.bind(this)) : ''}
         </label>
       </div>
     );
