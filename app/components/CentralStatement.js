@@ -31,7 +31,7 @@ class CentralStatement extends React.Component {
       <li className={null/*className*/}>
         <div className="view">
           <label onClick={null/*() => this.edit()*/}>
-            {/*this.props.statement.text*/}
+            {this.props.statement ? this.props.statement.text : ''}
           </label>
         </div>
       </li>

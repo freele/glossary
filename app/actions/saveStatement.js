@@ -9,7 +9,6 @@ function saveStatement (args, state, next) {
   //   console.log('request succeeded with JSON response', json)
   // });
 
-  console.log('_DEBUG STATEMENT TO SAVE', statement);
   fetch('/api/statement', {
     method: 'post',
     headers: {

@@ -1,19 +1,16 @@
-function saveStatement (args, state, next) {
+function fetchStatements (args, state, next) {
 
 
-  console.log('_DEBUG FETCH STATEMENTS');
-  fetch('/api/statements/list')
+  fetch('/api/statement')
   .then(function(response){
     return response.json();  
   }).then(function(response){
-    console.log('_DEBUG FETCHED STATEMENTS: ', response);
-    state.set('fetchedStatements', response);
-    next.success({});
+    console.log('FETCHED STATEMENTS', response);
+    next.success(response);
   }).catch(function(err){
-    // console.log(err);
-    console.log('err');
+    console.log(err);
   })
 
 };
 
-export default saveStatement;
+export default fetchStatements;

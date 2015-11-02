@@ -1,5 +1,6 @@
 function setStatementError (input, state) {
 
+  console.log('setStatementError', setStatementError);
   var path = ['statements', input.ref];
 
   let statement = state.get(path);

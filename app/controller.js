@@ -7,7 +7,7 @@ const model = Model({
   url: '/',
   statements: {},
   fetchedStatements: {},
-  centralStatementRef: 0,
+  centralStatement: {},
   newStatementText: '',
   isSaving: false
 });

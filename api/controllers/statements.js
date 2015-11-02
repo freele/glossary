@@ -8,7 +8,7 @@ var model = require('../models/statements.js');
 module.exports = {
     list: function(req, res) {
         model.
-        find({text: req.query.search}).
+        find({/*text: req.query.search*/}).
         limit(req.query.limit || 10).
         exec(function(err, statements){
             if(err) {
@@ -49,7 +49,6 @@ module.exports = {
     },
  
     create: function(req, res) {
-        console.log('_DEBUG req body', req.body);
         var text = req.body.text;
         var statement = new model({
             text: text
