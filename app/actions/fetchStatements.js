@@ -3,11 +3,13 @@ function shuffle(o){
     return o;
 }
 
-function fetchStatements (args, state, next) {
-  fetch('/api/statement')
+function fetchStatements (input, state, next) {
+  console.log('fetchStatements', input);
+  fetch('/api/statement' + (input.search ? ('?search=' + input.search) : '') )
   .then(function(response){
     return response.json();  
   }).then(function(response){
+    console.log('FETCHED STATEMENTS', response);
     next.success(shuffle(response));
   }).catch(function(err){
     console.log(err);

@@ -7,8 +7,13 @@ var model = require('../models/statements.js');
  */
 module.exports = {
     list: function(req, res) {
+        var query;
+        if (req.query.search){
+            query = { $text: {$search: req.query.search } };
+        }
+
         model.
-        find({/*text: req.query.search*/}).
+        find(query).
         limit(req.query.limit || 10).
         exec(function(err, statements){
             if(err) {

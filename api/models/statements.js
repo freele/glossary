@@ -31,4 +31,6 @@ schema.statics.random = function(next) {
   }.bind(this));
 };
 
+schema.index({ text: 'text'});
+
 module.exports = mongoose.model("statements", schema);
