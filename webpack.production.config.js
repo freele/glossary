@@ -28,6 +28,9 @@ module.exports = {
         screw_ie8: true
       }
     }),
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    }),
     new StatsPlugin('webpack.stats.json', {
       source: false,
       modules: false
@@ -46,7 +49,7 @@ module.exports = {
       loader: 'json'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
+      loader: 'style!css'
     }]
   },
   postcss: [
