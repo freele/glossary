@@ -23,4 +23,12 @@ schema.pre('save', function(next){
   next();
 });
 
+schema.statics.random = function(next) {
+  this.count(function(err, count) {
+    if (err) return next(err);
+    var rand = Math.floor(Math.random() * count);
+    this.findOne().skip(rand).exec(next);
+  }.bind(this));
+};
+
 module.exports = mongoose.model("statements", schema);

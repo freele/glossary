@@ -26,6 +26,7 @@ module.exports = function(app) {
          res.json({response: 'TEST API'});
     });
 
+    app.get('/api/statement/random', ctrlStatements.random);
     app.get('/api/statement/', ctrlStatements.list);
     app.get('/api/statement/:id', ctrlStatements.show);
     app.post('/api/statement/', ctrlStatements.create);

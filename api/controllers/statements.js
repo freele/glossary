@@ -7,13 +7,27 @@ var model = require('../models/statements.js');
  */
 module.exports = {
     list: function(req, res) {
-        model.find(function(err, statements){
+        model.
+        find({text: req.query.search}).
+        limit(req.query.limit || 10).
+        exec(function(err, statements){
             if(err) {
                 return res.json(500, {
                     message: 'Error getting statement.'
                 });
             }
             return res.json(statements);
+        });
+    },
+
+    random: function(req, res) {
+        model.random(function(err, statement){
+            if(err) {
+                return res.json(500, {
+                    message: 'Error getting statement.'
+                });
+            }
+            return res.json(statement);
         });
     },
 
