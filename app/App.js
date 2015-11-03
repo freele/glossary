@@ -40,11 +40,7 @@ class App extends React.Component {
     return (
       <section id="statementapp" className="app">
         <CentralStatement/>
-        <header id="header">
-          <h1>statements</h1>
-          <AddStatement/>
-        </header>
-
+        <AddStatement/>
         {this.props.visibleStatements.length ? <StatementsList/> : null}
         {this.renderImageDropZone(0)}
         {/*Object.keys(this.props.todos).length ? <TodosFooter/> : null*/}

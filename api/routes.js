@@ -1,3 +1,7 @@
+var express = require('express');
+var multer  = require('multer')
+var upload = multer({ dest: '/var/glossary/uploads' })
+
 module.exports = function(app) {
   // Closed API (distribut developers only) ////////////////////////////
   // Admin account Routes
@@ -6,6 +10,7 @@ module.exports = function(app) {
 
     var mongoose = require('mongoose');
     var host = 'localhost';
+
     var dbName = 'glossary';
     mongoose.connect('mongodb://' + host + '/' + dbName);
     var db = mongoose.connection;
@@ -15,16 +20,22 @@ module.exports = function(app) {
        console.log('connected to mongodb at ' + host + ' , DB: ' + dbName);
     });
 
+    app.use(express.static('/var/glossary/uploads'));
+
     var bodyParser = require('body-parser');
     app.use(bodyParser.json()); // for parsing application/json
 
     var ctrlStatements = require('./controllers/statements.js');
+    var ctrlFiles = require('./controllers/files.js');
 
     app.route('/api')
        .get(function(req, res, next) {
          console.log('TEST API');
          res.json({response: 'TEST API'});
     });
+
+    // var cpUpload = upload.fields([{ name: 'file', maxCount: 1 }])
+    app.post('/api/file', upload.single('file'), ctrlFiles.save);
 
     app.get('/api/statement/random', ctrlStatements.random);
     app.get('/api/statement/', ctrlStatements.list);

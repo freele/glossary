@@ -1,16 +1,11 @@
 function uploadFile (input, state, next) {
+  var data = new FormData()
+  data.append('file', input.file)
+  data.append('copyright', 'empty')
 
-  var path = ['statements', input.file];
-  let statement = state.get(path);
-
-
-  fetch('/api/statement', {
+  fetch('/api/file', {
     method: 'post',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(statement)
+    body: data
   }).then(function(result){
     next.success({
       id: Date.now() + parseInt(Math.random() * 1000)
@@ -18,7 +13,6 @@ function uploadFile (input, state, next) {
   }).catch(function(err){
     console.log(err);
   })
-
 
 };
 
