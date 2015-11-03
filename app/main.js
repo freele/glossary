@@ -7,37 +7,15 @@ import controller from './controller.js';
 import {Container} from 'cerebral-react';
 import CerebralRouter from 'cerebral-router';
 
-// import allTodosClicked from './signals/allTodosClicked.js';
-// import newTodoTitleChanged from './signals/newTodoTitleChanged.js';
-// import newTodoSubmitted from './signals/newTodoSubmitted.js';
-// import removeTodoClicked from './signals/removeTodoClicked.js';
-// import toggleCompletedChanged from './signals/toggleCompletedChanged.js';
-// import toggleAllChanged from './signals/toggleAllChanged.js';
-// import filterClicked from './signals/filterClicked.js';
-// import clearCompletedClicked from './signals/clearCompletedClicked.js';
-// import todoDoubleClicked from './signals/todoDoubleClicked.js';
 import newStatementChanged from './signals/newStatementChanged.js';
 import newStatementSubmitted from './signals/newStatementSubmitted.js';
 import centralStatementUpdated from './signals/centralStatementUpdated.js';
-// import recordClicked from './signals/recordClicked.js';
-// import playClicked from './signals/playClicked.js';
-// import stopClicked from './signals/stopClicked.js';
+import newFileWasDropped from './signals/newFileWasDropped.js';
 
-// controller.signal('allTodosClicked', allTodosClicked);
-// controller.signal('newTodoTitleChanged', newTodoTitleChanged);
-// controller.signal('newTodoSubmitted', newTodoSubmitted);
-// controller.signal('removeTodoClicked', removeTodoClicked);
-// controller.signal('toggleCompletedChanged', toggleCompletedChanged);
-// controller.signal('toggleAllChanged', toggleAllChanged);
-// controller.signal('filterClicked', filterClicked);
-// controller.signal('clearCompletedClicked', clearCompletedClicked);
-// controller.signal('todoDoubleClicked', todoDoubleClicked);
 controller.signal('newStatementChanged', newStatementChanged);
 controller.signal('newStatementSubmitted', newStatementSubmitted);
 controller.signal('centralStatementUpdated', centralStatementUpdated);
-// controller.signal('recordClicked', recordClicked);
-// controller.signal('playClicked', playClicked);
-// controller.signal('stopClicked', stopClicked);
+controller.signal('newFileWasDropped', newFileWasDropped);
 
 // ROUTER
 // const router = CerebralRouter(controller, {

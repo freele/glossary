@@ -22,6 +22,7 @@ import AddStatement from './components/AddStatement.js';
 import StatementsList from './components/StatementsList.js';
 // import StatementFooter from './components/StatementFooter.js';
 import CentralStatement from './components/CentralStatement.js';
+import ImageAndDropZone from './components/ImageAndDropZone.js';
 
 @Cerebral({
   statements: ['statements'],
@@ -30,6 +31,11 @@ import CentralStatement from './components/CentralStatement.js';
   visibleStatements: ['visibleStatements']
 })
 class App extends React.Component {
+  renderImageDropZone(index) {
+    return <ImageAndDropZone key={index} index={index}/>
+  }
+
+
   render() {
     return (
       <section id="statementapp" className="app">
@@ -40,6 +46,7 @@ class App extends React.Component {
         </header>
 
         {this.props.visibleStatements.length ? <StatementsList/> : null}
+        {this.renderImageDropZone(0)}
         {/*Object.keys(this.props.todos).length ? <TodosFooter/> : null*/}
       </section>
     );

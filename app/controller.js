@@ -8,6 +8,7 @@ const model = Model({
   statements: {},
   fetchedStatements: {},
   centralStatement: {},
+  files: {},
   newStatementText: '',
   isSaving: false
 });
