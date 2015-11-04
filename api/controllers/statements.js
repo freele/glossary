@@ -21,7 +21,11 @@ module.exports = {
                     message: 'Error getting statement.'
                 });
             }
-            return res.json(statements);
+            if (!statements.length) {
+                return this.random(req, res);
+            } else {
+                return res.json(statements);
+            }
         });
     },
 
