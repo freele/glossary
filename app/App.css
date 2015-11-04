@@ -36,11 +36,15 @@ html, body { height: 100%; padding: 0; margin: 0; font-family: arial; }
 }
 
 .statement {
-  padding-top: 30vh;
+  padding-top: 37vh;
   font-size: 5vh;
   text-transform: lowercase;
   font-weight: 900;
   color: white;
+  width: 50vw;
+  padding-left: 25vw;
+  line-height: 7vh;
+  height: 0;
 }
 
 .statement-word {
