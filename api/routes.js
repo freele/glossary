@@ -37,6 +37,7 @@ module.exports = function(app) {
 
     // var cpUpload = upload.fields([{ name: 'file', maxCount: 1 }])
     app.post('/api/file', upload.single('file'), ctrlFiles.save);
+    app.get('/api/file', ctrlFiles.list);
 
     app.get('/api/statement/random', ctrlStatements.random);
     app.get('/api/statement/', ctrlStatements.list);

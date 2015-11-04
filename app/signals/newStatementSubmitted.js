@@ -4,6 +4,7 @@ import setSaving from './../actions/setSaving.js';
 import unsetSaving from './../actions/unsetSaving.js';
 import updateStatement from './../actions/updateStatement.js';
 import setStatementError from './../actions/setStatementError.js';
+import setCentralStatementToNew from './../actions/setCentralStatementToNew.js';
 
 export default [
   addStatement,
@@ -14,5 +15,6 @@ export default [
       error: [setStatementError]
     }
   ],
-  unsetSaving
+  unsetSaving,
+  setCentralStatementToNew
 ];

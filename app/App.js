@@ -32,12 +32,10 @@ import ImageAndDropZone from './components/ImageAndDropZone.js';
 })
 class App extends React.Component {
   onDrop(e) {
-    console.log('PREVENT DROP');
     return false;
     e.preventDefault();
   }
   onClick(e) {
-    console.log('PREVENT CLICK');
     return false;
     e.preventDefault();
   }

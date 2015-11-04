@@ -9,6 +9,7 @@ class CentralStatement extends React.Component {
 
   componentDidMount() {
     this.props.signals.centralStatementUpdated();
+    this.props.signals.pageInited();
 
     // $.get(this.props.source, function(result) {
     //   var lastGist = result[0];
@@ -23,7 +24,7 @@ class CentralStatement extends React.Component {
 
   onStatementClick(word) {
     console.log('Click info', word);
-    this.props.signals.centralStatementUpdated({search: word});
+    this.props.signals.centralStatementUpdated();
   }
 
   renderWord(word, index) {

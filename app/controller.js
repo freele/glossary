@@ -9,6 +9,7 @@ const model = Model({
   centralStatement: {},
   files: {},
   newStatementText: '',
+  images: {},
   isSaving: false
 });
 

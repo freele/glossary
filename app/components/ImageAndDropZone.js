@@ -5,7 +5,8 @@ import {Decorator as Cerebral} from 'cerebral-react';
 import Dropzone from '../libs/Dropzone.js';
 
 @Cerebral({
-  files: ['files']
+  files: ['files'],
+  images: ['images']
 }, {})
 class ImageAndDropZone extends React.Component {
 
@@ -23,16 +24,29 @@ class ImageAndDropZone extends React.Component {
   }
 
   getStyle(img){
+    console.log('GET STYLE');
     var style = {
       backgroundImage: 'url(' + img + ')',
     };
     return style;
   }
 
+  renderImage(){
+    if (this.props.files && this.props.files[this.props.index]){
+      console.log('this.props.files', this.props.files);
+      return <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].url)} />
+    }
+  }
+
   render() {
+    console.log('RENDER DROP ZONE', this.props.images[0]);
     return (
       <Dropzone disableClick={true} className={'droppedImage' + this.props.index} ref="dropzone" onDrop={this.onDrop.bind(this)}>
-      {this.props.files ? (this.props.files[this.props.index] && <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].preview)} />) : ''}
+      {
+        this.renderImage()
+        // this.props.files ? (this.props.files[this.props.index] && <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].preview)} />) : ''
+        // (this.props.images ? <img className="droppedImage-img" style={this.getStyle(this.props.images[0].filename)} /> : '')
+      }
       </Dropzone>
     );
   }

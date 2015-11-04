@@ -14,7 +14,7 @@ module.exports = {
 
         model.
         find(query).
-        limit(req.query.limit || 10).
+        limit(req.query.limit/* || 10*/).
         exec(function(err, statements){
             if(err) {
                 return res.json(500, {

@@ -39,5 +39,17 @@ module.exports = {
             });
         });
     },
+    list: function(req, res) {
+        model.
+        find().
+        exec(function(err, images){
+            if(err) {
+                return res.json(500, {
+                    message: 'Error getting statement.'
+                });
+            }
+            return res.json(images);
+        });
+    }
  
 };

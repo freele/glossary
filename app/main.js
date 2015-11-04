@@ -11,11 +11,13 @@ import newStatementChanged from './signals/newStatementChanged.js';
 import newStatementSubmitted from './signals/newStatementSubmitted.js';
 import centralStatementUpdated from './signals/centralStatementUpdated.js';
 import newFileWasDropped from './signals/newFileWasDropped.js';
+import pageInited from './signals/pageInited.js';
 
 controller.signal('newStatementChanged', newStatementChanged);
 controller.signal('newStatementSubmitted', newStatementSubmitted);
 controller.signal('centralStatementUpdated', centralStatementUpdated);
 controller.signal('newFileWasDropped', newFileWasDropped);
+controller.signal('pageInited', pageInited);
 
 // ROUTER
 // const router = CerebralRouter(controller, {

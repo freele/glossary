@@ -9,6 +9,7 @@ function addStatement (args, state, output) {
   };
 
   state.set(['statements', ref], statement);
+  state.set(['centralStatementRef'], statement);
   state.set('newStatementText', '');
   state.set('nextRef', ref + 1);
 
