@@ -4,13 +4,17 @@ function shuffle(o){
 }
 
 function fetchStatements (input, state, next) {
-  console.log('fetchStatements', input);
   fetch('/api/statement' + (input.search ? ('?search=' + input.search) : '') )
   .then(function(response){
     return response.json();  
   }).then(function(response){
     console.log('FETCHED STATEMENTS', response);
-    next.success(shuffle(response));
+    if (Array.isArray(response)) {
+      next.success(shuffle(response));
+    } else {
+      next.success([response]);
+    }
+    
   }).catch(function(err){
     console.log(err);
   })

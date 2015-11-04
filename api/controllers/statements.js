@@ -5,12 +5,15 @@ var model = require('../models/statements.js');
  *
  * @description :: Server-side logic for managing cars.
  */
-module.exports = {
+
+var moduleExports = module.exports = {
     list: function(req, res) {
         var query;
         if (req.query.search){
             query = { $text: {$search: req.query.search } };
         }
+
+        var self = this;
 
         model.
         find(query).
@@ -21,8 +24,8 @@ module.exports = {
                     message: 'Error getting statement.'
                 });
             }
-            if (!statements.length) {
-                return this.random(req, res);
+            if (statements.length === 0 || statements.length === 1) {
+                return moduleExports.random(req, res);
             } else {
                 return res.json(statements);
             }

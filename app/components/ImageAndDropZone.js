@@ -24,7 +24,6 @@ class ImageAndDropZone extends React.Component {
   }
 
   getStyle(img){
-    console.log('GET STYLE');
     var style = {
       backgroundImage: 'url(' + img + ')',
     };
@@ -33,13 +32,11 @@ class ImageAndDropZone extends React.Component {
 
   renderImage(){
     if (this.props.files && this.props.files[this.props.index]){
-      console.log('this.props.files', this.props.files);
       return <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].url)} />
     }
   }
 
   render() {
-    console.log('RENDER DROP ZONE', this.props.images[0]);
     return (
       <Dropzone disableClick={true} className={'droppedImage' + this.props.index} ref="dropzone" onDrop={this.onDrop.bind(this)}>
       {

@@ -23,8 +23,8 @@ class CentralStatement extends React.Component {
   }
 
   onStatementClick(word) {
-    console.log('Click info', word);
-    this.props.signals.centralStatementUpdated();
+    // console.log('Click info', word);
+    this.props.signals.centralStatementUpdated({search: word});
   }
 
   renderWord(word, index) {
