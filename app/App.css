@@ -1,7 +1,22 @@
-.app {
+html, body { height: 100%; padding: 0; margin: 0; }
+
+.droppedImage1, .droppedImage2, .droppedImage3, .droppedImage0 {
+  width: 50%; 
+  height: 50%; 
+  float: left;
+}
+.droppedImage0, .droppedImage3{
+  background-color: #ccc;
+}
+
+#app {
 /*  background-color: green;
   height: 50px;
   border: 1px solid blue;*/
+}
+
+.u_h100 {
+  height: 100%;
 }
 
 .bap {
@@ -9,3 +24,14 @@
   height: 25px;
 }
 
+.centralElements {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  height: 400px;
+  margin-top: -200px;
+  width: 800px;
+  margin-left: -400px;
+  right: 0;
+  text-align: center;
+}

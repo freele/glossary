@@ -24,11 +24,9 @@ class ImageAndDropZone extends React.Component {
 
   render() {
     return (
-      <div>
-        <Dropzone ref="dropzone" onDrop={this.onDrop.bind(this)}>
-        {this.props.files ? (this.props.files[this.props.index] && <img src={this.props.files[this.props.index].preview} />) : ''}
-        </Dropzone>
-      </div>
+      <Dropzone className={'droppedImage' + this.props.index} ref="dropzone" onDrop={this.onDrop.bind(this)}>
+      {this.props.files ? (this.props.files[this.props.index] && <img src={this.props.files[this.props.index].preview} />) : ''}
+      </Dropzone>
     );
   }
 }

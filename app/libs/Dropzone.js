@@ -122,6 +122,7 @@ class Dropzone extends React.Component {
   render() {
     var className, style, activeStyle;
 
+    console.log('this.props.className', this.props.className);
     if (this.props.className) {
       className = this.props.className;
       if (this.state.isDragActive && this.props.activeClassName) {
@@ -141,8 +142,8 @@ class Dropzone extends React.Component {
       }
     } else if (!className) {
       style = {
-        width: 200,
-        height: 200,
+        // width: 200,
+        // height: 200,
         borderWidth: 2,
         borderColor: '#666',
         borderStyle: 'dashed',

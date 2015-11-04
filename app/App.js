@@ -38,13 +38,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <section id="statementapp" className="app">
-        <CentralStatement/>
-        <AddStatement/>
-        {this.props.visibleStatements.length ? <StatementsList/> : null}
-        {this.renderImageDropZone(0)}
+      <div className="u_h100">
+        <div className="centralElements">
+          <CentralStatement/>
+          <AddStatement/>
+        </div>
+
+        {/*this.props.visibleStatements.length ? <StatementsList/> : null*/}
+        { Array.from(Array(4).keys()).map(this.renderImageDropZone) }
         {/*Object.keys(this.props.todos).length ? <TodosFooter/> : null*/}
-      </section>
+      </div>
     );
   }
 }

@@ -1,6 +1,5 @@
 import Controller from 'cerebral';
 import Model from 'cerebral-baobab';
-import request from 'superagent';
 
 const model = Model({
   nextRef: 0,
@@ -14,7 +13,6 @@ const model = Model({
 });
 
 const services = {
-  request: request
 };
 
 const computed = {
