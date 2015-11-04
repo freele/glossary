@@ -22,10 +22,17 @@ class ImageAndDropZone extends React.Component {
     this.props.signals.newFileWasDropped({file: file, index: this.props.index});
   }
 
+  getStyle(img){
+    var style = {
+      backgroundImage: 'url(' + img + ')',
+    };
+    return style;
+  }
+
   render() {
     return (
       <Dropzone disableClick={true} className={'droppedImage' + this.props.index} ref="dropzone" onDrop={this.onDrop.bind(this)}>
-      {this.props.files ? (this.props.files[this.props.index] && <img src={this.props.files[this.props.index].preview} />) : ''}
+      {this.props.files ? (this.props.files[this.props.index] && <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].preview)} />) : ''}
       </Dropzone>
     );
   }

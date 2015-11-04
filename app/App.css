@@ -49,3 +49,9 @@ html, body { height: 100%; padding: 0; margin: 0; }
 .statementInput-input {
   width: 100%;
 }
+
+.droppedImage-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
