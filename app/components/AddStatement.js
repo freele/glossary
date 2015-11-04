@@ -25,7 +25,6 @@ class AddStatement extends React.Component {
             className="statementInput-input"
             id="new-statement"
             autoComplete="off"
-            placeholder="Enter new statement"
             disabled={this.props.isSaving}
             value={this.props.newStatementText}
             onChange={(e) => this.onNewStatementChange(e)}

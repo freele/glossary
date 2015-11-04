@@ -28,8 +28,13 @@ class CentralStatement extends React.Component {
 
   renderWord(word, index) {
     return (
-      <span key={index} onClick={() => this.onStatementClick(word)}>
-        {word + ' '}
+      <span>
+        <span className="statement-word" key={index} onClick={() => this.onStatementClick(word)}>
+          {word}
+        </span>
+        <span>
+          {' '}
+        </span>
       </span>
     );
   }

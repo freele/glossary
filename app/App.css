@@ -1,4 +1,4 @@
-html, body { height: 100%; padding: 0; margin: 0; }
+html, body { height: 100%; padding: 0; margin: 0; font-family: arial; }
 
 .droppedImage1, .droppedImage2, .droppedImage3, .droppedImage0 {
   width: 50%; 
@@ -37,17 +37,35 @@ html, body { height: 100%; padding: 0; margin: 0; }
 
 .statement {
   padding-top: 30vh;
+  font-size: 5vh;
+  text-transform: lowercase;
+  font-weight: 900;
+  color: white;
+}
+
+.statement-word {
+  cursor: pointer;
+  background: blue;
 }
 
 .statementInput {
   position: absolute;
-  bottom: 10vh;
+  bottom: 20vh;
   width: 60vw;
   padding-left: 20vw;
 }
 
 .statementInput-input {
   width: 100%;
+  font-size: 5vh;
+  background: blue;
+  border: 0;
+  text-align: center;
+  color: white;
+  overflow: scroll;
+  height: 5.5vh;
+  font-weight: 900;
+  font-family: arial;
 }
 
 .droppedImage-img {
