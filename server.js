@@ -42,7 +42,7 @@ app.get('*', function response(req, res, next) {
 
 apiRoutes(app);
 
-app.listen(port, 'localhost', function onStart(err) {
+app.listen(port, function onStart(err) {
   if (err) {
     console.log(err);
   }
