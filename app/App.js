@@ -31,22 +31,32 @@ import ImageAndDropZone from './components/ImageAndDropZone.js';
   visibleStatements: ['visibleStatements']
 })
 class App extends React.Component {
+  onDrop(e) {
+    console.log('PREVENT DROP');
+    return false;
+    e.preventDefault();
+  }
+  onClick(e) {
+    console.log('PREVENT CLICK');
+    return false;
+    e.preventDefault();
+  }
+
   renderImageDropZone(index) {
     return <ImageAndDropZone key={index} index={index}/>
   }
 
-
   render() {
     return (
       <div className="u_h100">
-        <div className="centralElements">
+        <div className="centralElements" onDrop={this.onDrop} onClick={this.onClick} >
           <CentralStatement/>
           <AddStatement/>
         </div>
 
-        {/*this.props.visibleStatements.length ? <StatementsList/> : null*/}
-        { Array.from(Array(4).keys()).map(this.renderImageDropZone) }
-        {/*Object.keys(this.props.todos).length ? <TodosFooter/> : null*/}
+        <div className="imagesLayer">
+          { Array.from(Array(4).keys()).map(this.renderImageDropZone) }
+        </div>
       </div>
     );
   }

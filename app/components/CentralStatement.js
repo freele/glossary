@@ -36,7 +36,7 @@ class CentralStatement extends React.Component {
 
   render() {
     return (
-      <div className="view">
+      <div className="statement">
         <label>
           {this.props.statement ? this.props.statement.text.split(' ').map(this.renderWord.bind(this)) : ''}
         </label>

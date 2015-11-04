@@ -19,16 +19,19 @@ class AddStatement extends React.Component {
 
   render() {
     return (
-      <form id="statement-form" onSubmit={(e) => this.onFormSubmit(e)}>
-        <input
-          id="new-statement"
-          autoComplete="off"
-          placeholder="Enter new statement"
-          disabled={this.props.isSaving}
-          value={this.props.newStatementText}
-          onChange={(e) => this.onNewStatementChange(e)}
-        />
-      </form>
+      <div className="statementInput">
+        <form id="statement-form" onSubmit={(e) => this.onFormSubmit(e)}>
+          <input
+            className="statementInput-input"
+            id="new-statement"
+            autoComplete="off"
+            placeholder="Enter new statement"
+            disabled={this.props.isSaving}
+            value={this.props.newStatementText}
+            onChange={(e) => this.onNewStatementChange(e)}
+          />
+        </form>
+      </div>
     );
   }
 

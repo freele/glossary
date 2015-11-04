@@ -28,6 +28,6 @@ ADD . ./
 # share port
 EXPOSE 3000
 
-RUN rimraf dist && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors
+# RUN rimraf dist && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors
 # run app
 CMD ["npm", "start"]

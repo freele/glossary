@@ -24,14 +24,28 @@ html, body { height: 100%; padding: 0; margin: 0; }
   height: 25px;
 }
 
+.imagesLayer {
+  height: 100vh;
+}
+
 .centralElements {
-  position: absolute;
-  left: 50%;
-  top: 30%;
-  height: 400px;
-  margin-top: -200px;
-  width: 800px;
-  margin-left: -400px;
-  right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: -100vh;
   text-align: center;
+}
+
+.statement {
+  padding-top: 30vh;
+}
+
+.statementInput {
+  position: absolute;
+  bottom: 10vh;
+  width: 60vw;
+  padding-left: 20vw;
+}
+
+.statementInput-input {
+  width: 100%;
 }
