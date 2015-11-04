@@ -9,10 +9,11 @@ module.exports = function(app) {
 
 
     var mongoose = require('mongoose');
-    var host = 'localhost';
-
+    var host = process.env.MONGO_PORT_27017_TCP_ADDR || 'localhost';
+    var port = process.env.MONGO_PORT_27017_TCP_PORT || 27017;
     var dbName = 'glossary';
-    mongoose.connect('mongodb://' + host + '/' + dbName);
+    mongoose.connect('mongodb://' + host + ':' + port + '/' + dbName);
+
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function (callback) {

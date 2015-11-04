@@ -1,7 +1,9 @@
 glossary-server-api:
+    environment:
+        - NODE_ENV=production
     image: freele/dockers:glossary
     ports:
-        - "80:3000"
+        - "3000:3000"
     links:
         - mongo:mongo
 
@@ -10,3 +12,12 @@ mongo:
     command: mongod --smallfiles
     volumes:
         - /data/mongo:/data/db
+
+# elasticsearch:
+#     image: elasticsearch:1.5.2
+#     # links:
+#     #     - redis
+#     ports:
+#         - "9200:9200"
+#         - "9300:9300"
+#     command: elasticsearch -Des.http.cors.enabled=true

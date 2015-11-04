@@ -8,7 +8,7 @@ import config from './webpack.config.js';
 import apiRoutes from './api/routes.js';
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
-const port = isDeveloping ? 3000 : process.env.PORT;
+const port = isDeveloping ? 3000 : (process.env.PORT || 3000);
 const app = express();
 
 app.use(express.static(__dirname + '/dist'));

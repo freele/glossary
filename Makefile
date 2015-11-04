@@ -7,7 +7,8 @@ start:
 	env COMPOSE_FILE=$(PWD)/docker-compose-develop.yml docker-compose up
 
 clean:
-	docker-compose rm --force
+	docker stop $(docker ps -aq)
+	docker rm $(docker ps -aq)
 
 pull:
 	docker login --username="freele" --password="123456" --email="kremenets0207@gmail.com"
@@ -24,6 +25,7 @@ build:
 	
 docker-clean:
 	docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+
 	docker rm $(docker ps -a | grep Exited | awk '{print $1}')
 
 # cli:  
