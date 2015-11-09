@@ -6,6 +6,11 @@ glossary-server-api:
         - "80:3000"
     links:
         - mongo:mongo
+    volumes: 
+        - /var/glossary/uploads:/var/glossary/uploads
+    # command: tail -f /dev/null
+
+
 mongo:
     image: mongo
     command: mongod --smallfiles

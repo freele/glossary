@@ -22,6 +22,9 @@ status:
 
 build:  
 	docker build -t "freele/dockers:glossary" .
+
+build-test:  
+	docker build -t "freele/dockers:test" .
 	
 docker-clean:
 	docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
@@ -33,12 +36,19 @@ docker-clean:
 cli-dev:  
 	env COMPOSE_FILE=$PWD/docker-compose-develop.yml --rm web bash
 
-deploy-do:
+deploy-staging:
 	docker-machine create \
 	--driver digitalocean \
 	--digitalocean-region ams2 \
 	--digitalocean-access-token {TOKEN} \
 	glossary-staging
+
+deploy-dev:
+	docker-machine create \
+	--driver digitalocean \
+	--digitalocean-region ams2 \
+	--digitalocean-access-token {TOKEN} \
+	glossary-dev
 
 # log:  
 # 	@tail -f logs/nginx-error.log
@@ -51,4 +61,4 @@ deploy-do:
 #	docker-compose start web
 #	@tail -f logs/nginx-error.log
 
-.PHONY: clean start stop status cli log cc restart start-dev build deploy-do
+.PHONY: clean start stop status cli log cc restart start-dev build deploy-staging deploy-dev buld-test

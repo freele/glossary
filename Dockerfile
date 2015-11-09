@@ -25,6 +25,10 @@ ADD . ./
 
 # RUN npm start
 
+# RUN mkdir /var/glossary
+RUN mkdir -p /var/glossary/uploads
+VOLUME "/var/glossary/uploads"
+
 # share port
 EXPOSE 3000
 
