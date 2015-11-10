@@ -6,6 +6,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 
+
 module.exports = {
   entry: [
     path.join(__dirname, 'app/main.js')
@@ -49,7 +50,7 @@ module.exports = {
       loader: 'json'
     }, {
       test: /\.css$/,
-      loader: 'style!css'
+      loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
     }]
   },
   postcss: [

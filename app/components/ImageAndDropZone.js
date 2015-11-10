@@ -24,6 +24,7 @@ class ImageAndDropZone extends React.Component {
   }
 
   getStyle(img){
+    // console.log('getStyle IMG', img);
     var style = {
       backgroundImage: 'url(' + img + ')',
     };
@@ -32,6 +33,7 @@ class ImageAndDropZone extends React.Component {
 
   renderImage(){
     if (this.props.files && this.props.files[this.props.index]){
+      // console.log('this.props.files[this.props.index].url: ', this.props.files[this.props.index].url);
       return <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].url)} />
     }
   }

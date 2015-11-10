@@ -8,6 +8,8 @@ glossary-server-api:
         - mongo:mongo
     volumes: 
         - /var/glossary/uploads:/var/glossary/uploads
+    # command: tail -f /dev/null
+
 
 mongo:
     image: mongo
@@ -16,3 +18,4 @@ mongo:
         - /data/mongo:/data/db
     ports:
         - "27017:27017"
+

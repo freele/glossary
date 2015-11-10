@@ -6,10 +6,10 @@ WORKDIR /src
 
 
 RUN apt-get update
-RUN apt-get install software-properties-common -y
-RUN add-apt-repository ppa:chris-lea/node.js -y
-RUN apt-get update
-RUN apt-get install nodejs python -y
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
 
 
 # prepare build

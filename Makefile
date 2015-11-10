@@ -3,7 +3,7 @@ start-prod:
 	docker-compose up -d
 
 start:
-	docker login --username="freele" --password="123456" --email="kremenets0207@gmail.com"
+	# docker login --username="freele" --password="123456" --email="kremenets0207@gmail.com"
 	env COMPOSE_FILE=$(PWD)/docker-compose-develop.yml docker-compose up
 
 clean:
@@ -22,6 +22,8 @@ status:
 
 build:  
 	docker build -t "freele/dockers:glossary" .
+build-prod:  
+	docker build -t "freele/dockers:glossary-prod" .
 
 build-test:  
 	docker build -t "freele/dockers:test" .
