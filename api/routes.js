@@ -1,6 +1,6 @@
 var express = require('express');
 var multer  = require('multer')
-var upload = multer({ dest: '/var/glossary/uploads' })
+var upload = multer()
 
 module.exports = function(app) {
   // Closed API (distribut developers only) ////////////////////////////

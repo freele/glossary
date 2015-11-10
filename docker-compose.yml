@@ -7,7 +7,8 @@ glossary-server-api:
     links:
         - mongo:mongo
     volumes: 
-        - /var/glossary/uploads:/var/glossary/uploads
+        # - /var/glossary/uploads:/var/glossary/uploads
+        - ./uploads:/var/glossary/uploads
 
 mongo:
     image: mongo

@@ -3,6 +3,8 @@ var fs = require('fs');
 
 var model = require('../models/files.js');
 
+var sharp = require('sharp');
+
 /**
  * carController.js
  *
@@ -21,23 +23,41 @@ module.exports = {
     path: '/var/glossary/uploads/6941d37b7a7d1952fd9de666f024bba1',
     size: 10228 }
 */
-        // console.log('REQ BODY', req.body, req.file);
-        file = req.file;
+        // console.log('REQ BODY0', req.body, req.file);
+        var file = req.file;
         file.copyright = req.body.copyright;
-        var file = new model(file);
-    
-        file.save(function(err, file){
-            if(err) {
-                return res.status(500).json(500, {
-                    message: 'Error saving file',
-                    error: err
+        file.filename = file.originalname; // _TODO add custom names generation
+       
+
+        sharp(file.buffer)
+            .resize(800)
+            .quality(80)
+            .withoutEnlargement()
+            .toFile('/var/glossary/uploads/' + file.filename, function(err) {
+                // output.jpg is a 300 pixels wide and 200 pixels high image
+                // containing a scaled and cropped version of input.jpg
+
+                // console.log('REQ BODY1 err?', err);
+
+
+                file.buffer = undefined;
+                file = new model(file);
+                file.save(function(err, file){
+                    if(err) {
+                        return res.status(500).json(500, {
+                            message: 'Error saving file information in the database',
+                            error: err
+                        });
+                    }
+                    return res.json({
+                        message: 'saved',
+                        _id: file._id
+                    });
                 });
-            }
-            return res.json({
-                message: 'saved',
-                _id: file._id
+
             });
-        });
+    
+
     },
     list: function(req, res) {
         model.
