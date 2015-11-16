@@ -1,4 +1,5 @@
 var mkdirp = require('mkdirp');
+var randomstring = require('randomstring');
 var fs = require('fs');
 
 var model = require('../models/files.js');
@@ -26,7 +27,10 @@ module.exports = {
         // console.log('REQ BODY0', req.body, req.file);
         var file = req.file;
         file.copyright = req.body.copyright;
-        file.filename = file.originalname; // _TODO add custom names generation
+        file.filename = randomstring.generate({
+            length: 12,
+            charset: 'alphabetic'
+        });
        
 
         sharp(file.buffer)

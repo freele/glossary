@@ -7,8 +7,9 @@ glossary-server-api:
     links:
         - mongo:mongo
     volumes: 
-        # - /var/glossary/uploads:/var/glossary/uploads
-        - ./uploads:/var/glossary/uploads
+        - /var/glossary/uploads:/var/glossary/uploads
+        # - ./uploads:/var/glossary/uploads
+    restart: always
 
 mongo:
     image: mongo
@@ -17,3 +18,4 @@ mongo:
         - /data/mongo:/data/db
     ports:
         - "27017:27017"
+    restart: always

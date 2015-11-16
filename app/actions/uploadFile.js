@@ -1,4 +1,5 @@
 function uploadFile (input, state, next) {
+  console.log('RUN uploadFile');
   var data = new FormData()
   data.append('file', input.file)
   data.append('copyright', 'empty')

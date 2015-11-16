@@ -29,8 +29,8 @@ class CentralStatement extends React.Component {
 
   renderWord(word, index) {
     return (
-      <span>
-        <span className="statement-word" key={index} onClick={() => this.onStatementClick(word)}>
+      <span key={index}>
+        <span className="statement-word" onClick={() => this.onStatementClick(word)}>
           {word}
         </span>
         <span>

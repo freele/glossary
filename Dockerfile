@@ -22,7 +22,7 @@ RUN npm install webpack -g
 
 RUN apt-get install pkg-config -y
 RUN curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
-RUN npm install sharp --save
+RUN npm install sharp randomstring --save
 
 # connect resources
 ADD . ./
