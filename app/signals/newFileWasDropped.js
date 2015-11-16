@@ -5,9 +5,14 @@ import addInfoAboutFile from './../actions/addInfoAboutFile.js';
 export default [
   setFile,
   [
-  addInfoAboutFile,
-  uploadFile, { // _TODO handle success (add loader) and error
-    success: [],
-    error: []
-  }]
+    addInfoAboutFile, {
+      success: [
+        [uploadFile, { // _TODO handle success (add loader) and error
+          success: [],
+          error: []
+      }]],
+      error: []
+    }
+  ],
+
 ];
