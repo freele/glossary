@@ -10,7 +10,8 @@ const model = Model({
   files: {},
   newStatementText: '',
   images: {},
-  isSaving: false
+  isSaving: false,
+  showFileInfoDialog: false
 });
 
 const services = {

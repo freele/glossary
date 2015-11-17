@@ -2,6 +2,7 @@
 
 function addInfoAboutFile (input, state, next) {
   console.log('RUN addInfoToFile');
+
   setTimeout(function () {
 
     next.success({

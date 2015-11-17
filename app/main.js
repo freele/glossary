@@ -11,12 +11,16 @@ import newStatementChanged from './signals/newStatementChanged.js';
 import newStatementSubmitted from './signals/newStatementSubmitted.js';
 import centralStatementUpdated from './signals/centralStatementUpdated.js';
 import newFileWasDropped from './signals/newFileWasDropped.js';
+import newFileInfoDialogSubmitted from './signals/newFileInfoDialogSubmitted.js';
+import newFileInfoDialogClosed from './signals/newFileInfoDialogClosed.js';
 import pageInited from './signals/pageInited.js';
 
 controller.signal('newStatementChanged', newStatementChanged);
 controller.signal('newStatementSubmitted', newStatementSubmitted);
 controller.signal('centralStatementUpdated', centralStatementUpdated);
 controller.signal('newFileWasDropped', newFileWasDropped);
+controller.signal('newFileInfoDialogSubmitted', newFileInfoDialogSubmitted);
+controller.signal('newFileInfoDialogClosed', newFileInfoDialogClosed);
 controller.signal('pageInited', pageInited);
 
 // ROUTER

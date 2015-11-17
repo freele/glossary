@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import {Decorator as Cerebral} from 'cerebral-react';
 import Dropzone from '../libs/Dropzone.js';
 
+
 @Cerebral({
   files: ['files'],
   images: ['images']
@@ -40,13 +41,13 @@ class ImageAndDropZone extends React.Component {
 
   render() {
     return (
-      <Dropzone disableClick={true} className={'droppedImage' + this.props.index} ref="dropzone" onDrop={this.onDrop.bind(this)}>
-      {
-        this.renderImage()
-        // this.props.files ? (this.props.files[this.props.index] && <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].preview)} />) : ''
-        // (this.props.images ? <img className="droppedImage-img" style={this.getStyle(this.props.images[0].filename)} /> : '')
-      }
-      </Dropzone>
+        <Dropzone disableClick={true} className={'droppedImage' + this.props.index} ref="dropzone" onDrop={this.onDrop.bind(this)}>
+        {
+          this.renderImage()
+          // this.props.files ? (this.props.files[this.props.index] && <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].preview)} />) : ''
+          // (this.props.images ? <img className="droppedImage-img" style={this.getStyle(this.props.images[0].filename)} /> : '')
+        }
+        </Dropzone>
     );
   }
 }

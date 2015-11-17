@@ -4,12 +4,12 @@ function shuffle(o){
 }
 
 function fetchImages (input, state, next) {
-  console.log('fetchImages', input);
+  // console.log('fetchImages', input);
   fetch('/api/file' )
   .then(function(response){
     return response.json();  
   }).then(function(response){
-    console.log('FETCHED FILES DATA', response);
+    // console.log('FETCHED FILES DATA', response);
     next.success(shuffle(response));
   }).catch(function(err){
     console.log(err);
