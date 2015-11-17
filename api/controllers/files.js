@@ -45,7 +45,6 @@ module.exports = {
 
 
                 file.buffer = undefined;
-                console.log('FILE2', file);
                 file = new model(file);
                 file.save(function(err, file){
                     if(err) {
@@ -67,6 +66,7 @@ module.exports = {
     list: function(req, res) {
         model.
         find().
+        lean().
         exec(function(err, images){
             if(err) {
                 return res.json(500, {

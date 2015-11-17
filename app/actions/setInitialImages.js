@@ -4,11 +4,11 @@ function setInitialImages (input, state, output) {
   let images = state.get('images');
 
   Array.from(Array(4).keys()).map(function(index){
-  	if (images[index]){
-  		if (!state.get(['files', index, 'url'])){
-  			state.set(['files', index], {url: images[index].filename});
-  		}
-  	}
+    if (images[index]){
+      if (!state.get(['files', index, 'url'])){
+        state.set(['files', index], {url: images[index].filename});
+      }
+    }
   });
   
 };

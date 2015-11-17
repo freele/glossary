@@ -24,6 +24,10 @@ class ImageAndDropZone extends React.Component {
     this.props.signals.newFileWasDropped({file: file, index: this.props.index});
   }
 
+  onClick() {
+    this.props.signals.imageWasClicked({index: this.props.index});
+  }
+
   getStyle(img){
     // console.log('getStyle IMG', img);
     var style = {
@@ -35,7 +39,7 @@ class ImageAndDropZone extends React.Component {
   renderImage(){
     if (this.props.files && this.props.files[this.props.index]){
       // console.log('this.props.files[this.props.index].url: ', this.props.files[this.props.index].url);
-      return <img className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].url)} />
+      return <img onClick={this.onClick.bind(this)} className="droppedImage-img" style={this.getStyle(this.props.files[this.props.index].url)} />
     }
   }
 

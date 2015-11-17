@@ -15,6 +15,7 @@ import newFileInfoDialogSubmitted from './signals/newFileInfoDialogSubmitted.js'
 import newFileInfoDialogClosed from './signals/newFileInfoDialogClosed.js';
 import newFileInfoChanged from './signals/newFileInfoChanged.js';
 import pageInited from './signals/pageInited.js';
+import imageWasClicked from './signals/imageWasClicked.js';
 
 controller.signal('newStatementChanged', newStatementChanged);
 controller.signal('newStatementSubmitted', newStatementSubmitted);
@@ -24,6 +25,7 @@ controller.signal('newFileInfoDialogSubmitted', newFileInfoDialogSubmitted);
 controller.signal('newFileInfoDialogClosed', newFileInfoDialogClosed);
 controller.signal('newFileInfoChanged', newFileInfoChanged);
 controller.signal('pageInited', pageInited);
+controller.signal('imageWasClicked', imageWasClicked);
 
 // ROUTER
 // const router = CerebralRouter(controller, {
