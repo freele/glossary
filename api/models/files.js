@@ -9,22 +9,22 @@ var schema = new Schema({
     unique: true
   },
   mimetype: {
-    String
+    type: String
   },
   encoding: {
-    String
+    type: String
   },
   originalname: {
-    String
+    type: String
   },
   created_at: {
-    Date
+    type: Date
   },
   updated_at: {
-    Date
+    type: Date
   },
   copyright: {
-    String
+    type: String
   }
 });
 

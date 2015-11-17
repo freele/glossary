@@ -32,7 +32,7 @@ module.exports = {
             charset: 'alphabetic'
         });
        
-
+        // console.log('FILE', file);
         sharp(file.buffer)
             .resize(800)
             .quality(80)
@@ -45,6 +45,7 @@ module.exports = {
 
 
                 file.buffer = undefined;
+                console.log('FILE2', file);
                 file = new model(file);
                 file.save(function(err, file){
                     if(err) {

@@ -30,11 +30,14 @@ injectTapEventPlugin();
 const Dialog = require('material-ui/lib/Dialog');
 const FlatButton = require('material-ui/lib/flat-button');
 
+const TextField = require('material-ui/lib/text-field');
+
 
 
 @Cerebral({
   showFileInfoDialog: ['showFileInfoDialog'],
   statements: ['statements'],
+  newFileInfoText: ['newFileInfoText'],
   isSaving: ['isSaving'] // for later usage
 }, {
   visibleStatements: ['visibleStatements']
@@ -65,6 +68,12 @@ class App extends React.Component {
     this.props.signals.newFileInfoDialogSubmitted();
   }
 
+  onFileInfoChange(event) {
+    this.props.signals.newFileInfoChanged(true, {
+      text: event.target.value
+    });
+  }
+
   render() {
 
     let standardActions = [
@@ -90,12 +99,20 @@ class App extends React.Component {
 
           <Dialog
             ref="standardDialog"
-            title="Dialog With Standard Actions"
+            title="Source"
             actions={standardActions}
             actionFocus="submit"
             open={this.props.showFileInfoDialog}
             onRequestClose={this.handleDialogClose}>
-            The actions in this window are created from the json that&#39;s passed in.
+
+            <TextField
+              autoComplete="off"
+              value={this.props.newFileInfoText}
+              hintText="Source or author of the file"
+              fullWidth={true}
+              onChange={(e) => this.onFileInfoChange(e)}
+            />
+            
           </Dialog>
 
 

@@ -12,6 +12,7 @@ const model = Model({
   images: {},
   isSaving: false,
   showFileInfoDialog: false,
+  newFileInfoText: '',
   dialogInput: {}
 });
 
