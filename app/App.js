@@ -45,6 +45,8 @@ class App extends React.Component {
     console.log('constructor');
     super();
     this.handleDialogClose = this.handleDialogClose.bind(this);
+    this.handleDialogSubmit = this.handleDialogSubmit.bind(this);
+
   }
 
 
@@ -60,7 +62,7 @@ class App extends React.Component {
     this.props.signals.newFileInfoDialogClosed();
   }
   handleDialogSubmit() {
-    console.log.signals.newFileInfoDialogSubmitted();
+    this.props.signals.newFileInfoDialogSubmitted();
   }
 
   render() {

@@ -11,7 +11,8 @@ const model = Model({
   newStatementText: '',
   images: {},
   isSaving: false,
-  showFileInfoDialog: false
+  showFileInfoDialog: false,
+  dialogInput: {}
 });
 
 const services = {

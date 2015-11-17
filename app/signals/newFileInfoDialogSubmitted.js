@@ -1,13 +1,12 @@
 import setFile from './../actions/setFile.js';
 import uploadFile from './../actions/uploadFile.js';
 import addInfoAboutFile from './../actions/addInfoAboutFile.js';
+import hideDialog from './../actions/hideDialog.js';
 
 export default [
+  addInfoAboutFile,
+  hideDialog,
   setFile,
-  [addInfoAboutFile, { // _TODO handle success (add loader) and error
-    success: [],
-    error: []
-  }],
   [uploadFile, { // _TODO handle success (add loader) and error
     success: [],
     error: []
