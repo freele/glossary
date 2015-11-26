@@ -1,6 +1,6 @@
 glossary-server-api:
-    # environment:
-    #     - NODE_ENV=production
+    environment:
+        - NODE_ENV=production
     image: freele/dockers:glossary
     ports:
         - "80:3000"
@@ -9,7 +9,7 @@ glossary-server-api:
     volumes: 
         - /var/glossary/uploads:/var/glossary/uploads
         # - ./uploads:/var/glossary/uploads
-    restart: always
+    # restart: always
 
 mongo:
     image: mongo
@@ -18,4 +18,4 @@ mongo:
         - /data/mongo:/data/db
     ports:
         - "27017:27017"
-    restart: always
+    # restart: always

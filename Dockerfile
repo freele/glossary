@@ -19,10 +19,6 @@ ADD package.json package.json
 RUN npm install
 RUN rm package.json
 
-RUN npm install rimraf -g 
-RUN npm install webpack -g 
-
-
 
 
 # connect resources
@@ -37,6 +33,10 @@ VOLUME "/var/glossary/uploads"
 # share port
 EXPOSE 3000
 
-# RUN rimraf dist && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors
+###### missed modules not to reinstall all the npm
+RUN npm i react-tap-event-plugin -S
+#####
+
+RUN npm run-script build
 # run app
 CMD ["npm", "start"]

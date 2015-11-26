@@ -1,21 +1,8 @@
 glossary-server-api:
-    # environment:
-    #     - NODE_ENV=production
-    image: freele/dockers:glossary
-    ports:
-        - "80:3000"
-    links:
-        - mongo:mongo
+    environment:
+        - NODE_ENV=development
     volumes: 
-        - /var/glossary/uploads:/var/glossary/uploads
-    # command: tail -f /dev/null
-
-
-mongo:
-    image: mongo
-    command: mongod --smallfiles
-    volumes:
-        - /data/mongo:/data/db
-    ports:
-        - "27017:27017"
+        - ./app:/src/app
+        - ./api:/src/api
+    command: tail -f /dev/null
 

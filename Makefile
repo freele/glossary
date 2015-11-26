@@ -1,10 +1,14 @@
 # _TODO review and set up coommands
-start-prod:
+start:
 	docker-compose up -d
 
-start:
-	# docker login --username="freele" --password="123456" --email="kremenets0207@gmail.com"
-	env COMPOSE_FILE=$(PWD)/docker-compose-develop.yml docker-compose up
+login:
+	docker login --username="freele" --password="123456" --email="kremenets0207@gmail.com"
+
+dev:
+	docker-compose -f docker-compose.yml -f docker-compose-develop.yml up
+dev-stop:
+	docker-compose -f docker-compose.yml -f docker-compose-develop.yml stop
 
 clean:
 	docker stop $(docker ps -aq)
@@ -63,4 +67,4 @@ deploy-dev:
 #	docker-compose start web
 #	@tail -f logs/nginx-error.log
 
-.PHONY: clean start stop status cli log cc restart start-dev build deploy-staging deploy-dev buld-test
+.PHONY: clean start stop status cli log cc restart start-dev build deploy-staging deploy-dev buld-test dev login dev-stop
